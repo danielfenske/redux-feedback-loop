@@ -16,11 +16,13 @@ import Admin from '../Admin/Admin.jsx';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 // IMPORT REDUX COMPONENTS
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 function App() {
 
   const dispatch = useDispatch();
+
+  const currentFeedback = useSelector((store) => (store.currentFeedback));
 
   // API ENDPOINTS
   const getFeedbackHistory = () => {
@@ -35,6 +37,22 @@ function App() {
       })
       .catch((error) => {
         console.log('error from GET', error);
+      })
+  }
+
+  const postCurrentFeedback = () => {
+    console.log('in postCurrentFeedback', currentFeedback);
+
+    axios.post('/api/feedback', currentFeedback)
+      .then((response) => {
+        console.log('response from POST', response);
+
+        // dispatch({
+        //   type: 'CLEAR_FEEDBACK'
+        // })
+      })
+      .catch((error) => {
+        console.log('error from POST', error);
       })
   }
 
@@ -73,7 +91,9 @@ function App() {
         </Route>
 
         <Route path='/review' exact>
-          <Review />
+          <Review 
+            postCurrentFeedback={postCurrentFeedback}
+          />
         </Route>
 
         <Route path='/admin' exact>

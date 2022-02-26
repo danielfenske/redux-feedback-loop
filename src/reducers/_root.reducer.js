@@ -13,7 +13,7 @@ const feedbackHistory = (state=[], action) => {
 
 // this reducer stores current feedback properties with its values and gets updated every time
 // a section of the form is received
-const storeCurrentFeedback = (state={feeling: 0, content: 0, support: 0, comments: '', flagged: false}, action) => {    
+const currentFeedback = (state={feeling: 0, content: 0, support: 0, comments: '', flagged: false}, action) => {    
 
     // evaluate action.type from dispatch and add payload data accordingly
     switch (action.type) {
@@ -42,6 +42,6 @@ const storeCurrentFeedback = (state={feeling: 0, content: 0, support: 0, comment
     }
 }
 
-const rootReducer = combineReducers({feedbackHistory, storeCurrentFeedback});
+const rootReducer = combineReducers({feedbackHistory, currentFeedback});
 
 export default rootReducer;
