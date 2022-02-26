@@ -31,7 +31,7 @@ router.post('/', (req, res) => {
     pool.query(queryText, values)
         .then((result) => {
             console.log('Added new item');
-            res.sendStatus(200);
+            res.sendStatus(201);
         })
         .catch((error) => {
             console.log('Error adding new item', error);
