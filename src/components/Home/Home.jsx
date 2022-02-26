@@ -11,9 +11,16 @@ const Home = () => {
 
     console.log('feedbackHistory', feedbackHistory);
 
+    const handleClick = () => {
+        console.log('in handleClick');
+
+        history.push('/feeling');
+    }
+
     return (
         <>
             <h1>Feedback</h1>
+            <button onClick={handleClick}>Get Started</button>
 
             <h1>Feedback History</h1>
             <table>
@@ -29,7 +36,7 @@ const Home = () => {
 
                 <tbody>
                     {feedbackHistory.map((feedback, id) => 
-                        <tr>
+                        <tr key={id}>
                             <td>{feedback.feeling}</td>
                             <td>{feedback.understanding}</td>
                             <td>{feedback.support}</td>
