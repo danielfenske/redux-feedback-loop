@@ -7,7 +7,7 @@ import registerServiceWorker from './registerServiceWorker';
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import logger from 'redux-logger';
-import rootReducer from './reducers/_root.reducer.js';
+import rootReducer from './reducers/_root.reducer';
 
 // create storeInstance, which pulls in rootReducer and applyMiddleware (logger)
 const storeInstance = createStore(

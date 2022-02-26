@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
+import {useEffect} from 'react';
 
 // COMPONENT IMPORTS
 import Home from '../Home/Home.jsx';
@@ -14,7 +15,34 @@ import Admin from '../Admin/Admin.jsx';
 // IMPORT ROUTING
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
+// IMPORT REDUX COMPONENTS
+import { useDispatch } from 'react-redux';
+
 function App() {
+
+  const dispatch = useDispatch();
+
+  // API ENDPOINTS
+  const getFeedbackHistory = () => {
+    axios.get('/api/feedback')
+      .then((response) => {
+        console.log('response from GET', response.data);
+
+        dispatch({
+          type: 'STORE_FEEDBACK_HISTORY',
+          payload: response.data
+        })
+      })
+      .catch((error) => {
+        console.log('error from GET', error);
+      })
+  }
+
+
+  useEffect(() => {
+    getFeedbackHistory(); 
+  }, [])
+
 
   return (
     <Router>
@@ -49,7 +77,7 @@ function App() {
         </Route>
 
         <Route path='/admin' exact>
-          <Admin/>
+          <Admin />
         </Route>
 
       </div>
