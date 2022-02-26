@@ -18,7 +18,7 @@ const Home = () => {
     }
 
     return (
-        <>
+        <div className="formContainer">
             <h1>Feedback</h1>
             <button onClick={handleClick}>Get Started</button>
 
@@ -46,7 +46,7 @@ const Home = () => {
                     )}
                 </tbody>
             </table>
-        </>
+        </div>
     );
 }
 
