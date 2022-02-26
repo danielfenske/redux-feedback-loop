@@ -14,6 +14,7 @@ router.get('/', (req, res) => {
         .catch((error) => {
             console.log('error in GET /api/feedback', error);
             
+            res.sendStatus(500);
         })
 })
 
