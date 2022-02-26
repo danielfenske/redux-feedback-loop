@@ -4,14 +4,19 @@ import { useHistory } from 'react-router-dom';
 
 const Review = ({postCurrentFeedback}) => {
 
+    // grab currentFeedback state from redux to render on DOM
     const currentFeedback = useSelector((store) => (store.currentFeedback));
 
-    console.log('currentFeedback', currentFeedback);
-
+    // declare variable for useHistory
+    const history = useHistory();
+    
+    // this click listener sends student back to home page and initiates axios POST request to server (taken in via props)
     const handleClick = () => {
         console.log('in handleClick');
 
         postCurrentFeedback();
+
+        history.push('/');
     }
 
     return (

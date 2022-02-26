@@ -41,15 +41,17 @@ function App() {
   }
 
   const postCurrentFeedback = () => {
-    console.log('in postCurrentFeedback', currentFeedback);
 
     axios.post('/api/feedback', currentFeedback)
       .then((response) => {
-        console.log('response from POST', response);
+        console.log('response from POST', response.data);
 
-        // dispatch({
-        //   type: 'CLEAR_FEEDBACK'
-        // })
+        dispatch({
+          type: 'CLEAR_FEEDBACK'
+        })
+
+        getFeedbackHistory();
+
       })
       .catch((error) => {
         console.log('error from POST', error);

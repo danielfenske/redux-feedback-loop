@@ -9,8 +9,6 @@ const Home = () => {
     // declare useSelector as new variable (gets state of feedbackHistory reducer)
     const feedbackHistory = useSelector((store) => store.feedbackHistory);
 
-    console.log('feedbackHistory', feedbackHistory);
-
     const handleClick = () => {
         console.log('in handleClick');
 
