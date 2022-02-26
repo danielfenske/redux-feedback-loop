@@ -29,10 +29,13 @@ router.post('/', (req, res) => {
     const values = [req.body.feeling, req.body.understanding, req.body.support, req.body.comments, req.body.flagged];
 
     pool.query(queryText, values)
-        .then((res) => {
+        .then((result) => {
+            console.log('Added new item');
             res.sendStatus(200);
         })
         .catch((error) => {
+            console.log('Error adding new item', error);
+            
             res.sendStatus(500);
         })
 })

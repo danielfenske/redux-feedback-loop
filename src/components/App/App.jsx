@@ -6,7 +6,7 @@ import {useEffect} from 'react';
 // COMPONENT IMPORTS
 import Home from '../Home/Home.jsx';
 import Feeling from '../Feeling/Feeling.jsx';
-import Content from '../Content/Content.jsx';
+import Understanding from '../Understanding/Understanding.jsx';
 import Support from '../Support/Support.jsx';
 import Comments from '../Comments/Comments.jsx';
 import Review from '../Review/Review.jsx';
@@ -77,8 +77,8 @@ function App() {
           <Feeling />
         </Route>
 
-        <Route path='/content' exact>
-          <Content />
+        <Route path='/understanding' exact>
+          <Understanding />
         </Route>
 
         <Route path='/support' exact>

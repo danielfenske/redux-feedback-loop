@@ -3,9 +3,9 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from 'react-router-dom';
 
-const Content = () => {
-    // declare state variable for content
-    const [content, setContent] = useState('');
+const Understanding = () => {
+    // declare state variable for understanding
+    const [understanding, setUnderstanding] = useState('');
 
     // declare variable for useDispatch
     const dispatch = useDispatch();
@@ -14,17 +14,17 @@ const Content = () => {
     const history = useHistory();
 
     const handleInputChange = (event) => {
-        setContent(event.target.value);
+        setUnderstanding(event.target.value);
     }
 
     // stores input value to dispatch to reducer; sends user to next section of form
     const handleClick = () => {
         console.log('in handleClick');
 
-        if (content !== '') {
+        if (understanding !== '') {
             dispatch({
-                type: 'ADD_CONTENT',
-                payload: Number(content)
+                type: 'ADD_UNDERSTANDING',
+                payload: Number(understanding)
             })
 
             history.push('/support');
@@ -51,4 +51,4 @@ const Content = () => {
     );
 }
 
-export default Content;
+export default Understanding;

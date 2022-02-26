@@ -27,7 +27,7 @@ const Feeling = () => {
                 payload: Number(feeling)
             })
 
-            history.push('/content');
+            history.push('/understanding');
         } else {
             alert(`Please let us know how you're feeling`);
         }

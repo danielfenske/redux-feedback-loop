@@ -13,7 +13,7 @@ const feedbackHistory = (state=[], action) => {
 
 // this reducer stores current feedback properties with its values and gets updated every time
 // a section of the form is received
-const currentFeedback = (state={feeling: 0, content: 0, support: 0, comments: '', flagged: false}, action) => {    
+const currentFeedback = (state={feeling: 0, understanding: 0, support: 0, comments: '', flagged: false}, action) => {    
 
     // evaluate action.type from dispatch and add payload data accordingly
     switch (action.type) {
@@ -21,9 +21,9 @@ const currentFeedback = (state={feeling: 0, content: 0, support: 0, comments: ''
             const feeling = action.payload;
             return {...state, feeling: feeling};
 
-        case 'ADD_CONTENT':
-            const content = action.payload;
-            return {...state, content: content};
+        case 'ADD_UNDERSTANDING':
+            const understanding = action.payload;
+            return {...state, understanding: understanding};
 
         case 'ADD_SUPPORT':
             const support = action.payload;
