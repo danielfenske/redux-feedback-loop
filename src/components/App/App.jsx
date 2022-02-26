@@ -9,6 +9,7 @@ import Content from '../Content/Content.jsx';
 import Support from '../Support/Support.jsx';
 import Comments from '../Comments/Comments.jsx';
 import Review from '../Review/Review.jsx';
+import Admin from '../Admin/Admin.jsx';
 
 // IMPORT ROUTING
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
@@ -45,6 +46,10 @@ function App() {
 
         <Route path='/review' exact>
           <Review />
+        </Route>
+
+        <Route path='/admin' exact>
+          <Admin/>
         </Route>
 
       </div>
