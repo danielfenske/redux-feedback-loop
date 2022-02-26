@@ -16,7 +16,7 @@ const Review = ({postCurrentFeedback}) => {
 
         postCurrentFeedback();
 
-        history.push('/');
+        history.push('/success');
     }
 
     return (

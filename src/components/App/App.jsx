@@ -11,6 +11,7 @@ import Support from '../Support/Support.jsx';
 import Comments from '../Comments/Comments.jsx';
 import Review from '../Review/Review.jsx';
 import Admin from '../Admin/Admin.jsx';
+import Success from '../Success/Success.jsx';
 
 // IMPORT ROUTING
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
@@ -100,6 +101,10 @@ function App() {
 
         <Route path='/admin' exact>
           <Admin />
+        </Route>
+
+        <Route path='/success' exact>
+          <Success />
         </Route>
 
       </div>
