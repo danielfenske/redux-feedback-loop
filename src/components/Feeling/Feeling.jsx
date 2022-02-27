@@ -1,6 +1,6 @@
 // import necessary redux/react components for this page
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from 'react-router-dom';
 
 // import Material UI
@@ -8,6 +8,9 @@ import { Typography, Rating, Button, Container, styled, Card, CardContent, CardA
 import { teal } from '@mui/material/colors';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+
+// import CSS
+import './Feeling.css';
 
 const Feeling = () => {
     // declare state variable for feeling
@@ -18,6 +21,9 @@ const Feeling = () => {
 
     // declare variable for useHistory
     const history = useHistory();
+
+    // useSelector to grab current value of feeling in feedback
+    const currentFeeling = useSelector((store) => (store.currentFeedback.feeling));
 
     const handleInputChange = (event) => {
         setFeeling(event.target.value);
@@ -42,7 +48,7 @@ const Feeling = () => {
     const handleBackButton = () => {
         console.log('in handleNextButton');
 
-        if (feeling !== '') {
+        if (feeling !== '' || currentFeeling !== '') {
             dispatch({
                 type: 'ADD_FEELING',
                 payload: Number(feeling)
@@ -80,20 +86,28 @@ const Feeling = () => {
 
                 <button onClick={handleClick}>Next</button>
             </div> */}
-            <Container maxWidth="xs">
-                <Card>
+
+            <Container maxWidth="sm">
+
+                <div className="progressBar">
+                    <div className="progressBarFeeling"></div>
+                </div>
+
+                <Card sx={{width: 300}}>
                     <CardContent>
                         <h1>Feeling</h1>
                         <p>How are you feeling today?</p>
 
                         <Rating
                             name="simple-controlled"
+                            defaultValue={currentFeeling}
                             onChange={handleInputChange}
+                            size="large"
                         />
                     </CardContent>
 
                     <CardActions className="cardActionContainer">
-                        <Button size="small" sx={{color: 'teal'}} onClick={handleBackButton}><ArrowBackIcon fontSize="small" />Back</Button>
+                        <Button size="small" sx={{ color: 'teal' }} onClick={handleBackButton}><ArrowBackIcon fontSize="small" />Back</Button>
                         <FilledButton size="small" onClick={handleNextButton}>Next<ArrowForwardIcon fontSize="small" /></FilledButton>
                     </CardActions>
                 </Card>
