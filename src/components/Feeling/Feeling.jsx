@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from 'react-router-dom';
 
 // import Material UI
-import { Typography, Rating, Button, Container, styled, Card, CardContent, CardActions } from '@mui/material';
+import { Rating, Button, Container, styled, Card, CardContent, CardActions } from '@mui/material';
 import { teal } from '@mui/material/colors';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
@@ -34,6 +34,15 @@ const Feeling = () => {
         console.log('in handleNextButton');
 
         if (feeling !== '') {
+
+            dispatch({
+                type: 'ADD_FEELING',
+                payload: Number(feeling)
+            })
+
+            history.push('/understanding');
+        } else if (currentFeeling !== '') {
+            
             dispatch({
                 type: 'ADD_FEELING',
                 payload: Number(feeling)
@@ -93,7 +102,7 @@ const Feeling = () => {
                     <div className="progressBarFeeling"></div>
                 </div>
 
-                <Card sx={{width: 300}}>
+                <Card>
                     <CardContent>
                         <h1>Feeling</h1>
                         <p>How are you feeling today?</p>
