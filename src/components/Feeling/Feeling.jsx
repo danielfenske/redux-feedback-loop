@@ -4,9 +4,10 @@ import { useDispatch } from "react-redux";
 import { useHistory } from 'react-router-dom';
 
 // import Material UI
-import {Typography, Rating, Button, Container, styled, Card, CardContent, CardActions} from '@mui/material';
+import { Typography, Rating, Button, Container, styled, Card, CardContent, CardActions } from '@mui/material';
 import { teal } from '@mui/material/colors';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const Feeling = () => {
     // declare state variable for feeling
@@ -23,8 +24,8 @@ const Feeling = () => {
     }
 
     // stores input value to dispatch to reducer; sends user to next section of form
-    const handleClick = () => {
-        console.log('in handleClick');
+    const handleNextButton = () => {
+        console.log('in handleNextButton');
 
         if (feeling !== '') {
             dispatch({
@@ -38,9 +39,24 @@ const Feeling = () => {
         }
     }
 
+    const handleBackButton = () => {
+        console.log('in handleNextButton');
+
+        if (feeling !== '') {
+            dispatch({
+                type: 'ADD_FEELING',
+                payload: Number(feeling)
+            })
+
+            history.push('/');
+        } else {
+            alert(`Please let us know how you're feeling`);
+        }
+    }
+
     console.log('feeling:', feeling);
 
-    const ColorButton = styled(Button)(({ theme }) => ({
+    const FilledButton = styled(Button)(({ theme }) => ({
         color: theme.palette.getContrastText(teal[500]),
         backgroundColor: teal[500],
         '&:hover': {
@@ -77,7 +93,8 @@ const Feeling = () => {
                     </CardContent>
 
                     <CardActions className="cardActionContainer">
-                        <ColorButton variant="text" size="small" onClick={handleClick}>Next<ArrowForwardIcon fontSize="small" /></ColorButton>
+                        <Button size="small" sx={{color: 'teal'}} onClick={handleBackButton}><ArrowBackIcon fontSize="small" />Back</Button>
+                        <FilledButton size="small" onClick={handleNextButton}>Next<ArrowForwardIcon fontSize="small" /></FilledButton>
                     </CardActions>
                 </Card>
             </Container>
