@@ -3,6 +3,14 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from 'react-router-dom';
 
+// import Material UI
+import { Typography, Rating, Button } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { teal } from '@mui/material/colors';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+
 const Feeling = () => {
     // declare state variable for feeling
     const [feeling, setFeeling] = useState('');
@@ -33,20 +41,38 @@ const Feeling = () => {
         }
     }
 
+    console.log('feeling:', feeling);
+
+    const ColorButton = styled(Button)(({ theme }) => ({
+        color: theme.palette.getContrastText(teal[500]),
+        backgroundColor: teal[500],
+        '&:hover': {
+            backgroundColor: teal[700],
+        },
+    }));
+
     return (
         <div className="formContainer">
             <h1>Feeling</h1>
             <p>How are you feeling today?</p>
 
-            <input
+            {/* <input
                 type="number"
                 onChange={handleInputChange}
                 placeholder="choose between 1-5"
                 min="0"
                 max="5"
+            /> */}
+
+            <Typography component="legend"></Typography>
+            <Rating
+                name="simple-controlled"
+                onChange={handleInputChange}
             />
-            
-            <button onClick={handleClick}>Next</button>
+
+            {/* <button onClick={handleClick}>Next</button> */}
+            <ColorButton variant="text" onClick={handleClick}>Next<ArrowForwardIcon fontSize="small"/></ColorButton>
+
         </div>
     );
 }
