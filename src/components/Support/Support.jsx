@@ -78,7 +78,7 @@ const Support = () => {
             <Container maxWidth="sm">
 
                 <div className="progressBar">
-                    <div className="progressBarStatus"></div>
+                    <div className="progressBarSupport"></div>
                 </div>
 
                 <Card>

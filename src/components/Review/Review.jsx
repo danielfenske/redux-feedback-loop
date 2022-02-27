@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { useHistory } from 'react-router-dom';
 
 // import Material UI
-import { Button, Container, styled, Card, CardContent, CardActions } from '@mui/material';
+import { Rating, Button, Container, styled, Card, CardContent, CardActions } from '@mui/material';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import { teal } from '@mui/material/colors';
 
@@ -41,7 +41,7 @@ const Review = ({ postCurrentFeedback }) => {
 
     return (
         <>
-            <div className="formContainer">
+            {/* <div className="formContainer">
                 <h1>Review</h1>
 
                 <table>
@@ -54,24 +54,61 @@ const Review = ({ postCurrentFeedback }) => {
                 </table>
 
                 <button onClick={handleNextButton}>Submit</button>
-            </div>
+            </div> */}
 
             <Container maxWidth="sm">
 
                 <div className="progressBar">
-                    <div className="progressBarStatus"></div>
+                    <div className="progressBarReview"></div>
                 </div>
 
                 <Card>
                     <CardContent>
-                        <TableContainer component={Paper}>
-                            <Table sx={{ minWidth: 300 }} size="small" aria-label="a dense table">
-                                <TableHead>
-                                    <TableRow><TableCell sx={{fontWeight: 'bold'}}>Feeling</TableCell><TableCell>{currentFeedback.feeling}</TableCell></TableRow>
-                                    <TableRow><TableCell sx={{fontWeight: 'bold'}}>Understanding</TableCell><TableCell>{currentFeedback.understanding}</TableCell></TableRow>
-                                    <TableRow><TableCell sx={{fontWeight: 'bold'}}>Support</TableCell><TableCell>{currentFeedback.support}</TableCell></TableRow>
-                                    <TableRow><TableCell sx={{fontWeight: 'bold'}}>Comments</TableCell><TableCell>{currentFeedback.comments}</TableCell></TableRow>
-                                </TableHead>
+                    <h1>Review</h1>
+                        <TableContainer>
+                            <Table sx={{ minWidth: 200 }} size="small" aria-label="a dense table">
+                                <TableBody>
+                                    <TableRow>
+                                        <TableCell sx={{ fontWeight: 'bold' }}>Feeling</TableCell>
+                                        <TableCell>
+                                            <Rating
+                                                name="simple-controlled"
+                                                value={currentFeedback.feeling}
+                                                size="medium"
+                                                disabled
+                                            />
+                                        </TableCell>
+                                    </TableRow>
+
+                                    <TableRow>
+                                        <TableCell sx={{ fontWeight: 'bold' }}>Understanding</TableCell>
+                                        <TableCell>
+                                            <Rating
+                                                name="simple-controlled"
+                                                value={currentFeedback.understanding}
+                                                size="medium"
+                                                disabled
+                                            />
+                                        </TableCell>
+                                    </TableRow>
+
+                                    <TableRow>
+                                        <TableCell sx={{ fontWeight: 'bold' }}>Support</TableCell>
+                                        <TableCell>
+                                            <Rating
+                                                name="simple-controlled"
+                                                value={currentFeedback.support}
+                                                size="medium"
+                                                disabled
+                                            />
+                                        </TableCell>
+                                    </TableRow>
+
+                                    <TableRow>
+                                        <TableCell sx={{ fontWeight: 'bold' }}>Comments</TableCell>
+                                        <TableCell>{currentFeedback.comments}</TableCell>
+                                    </TableRow>
+                                </TableBody>
                             </Table>
                         </TableContainer>
                     </CardContent>

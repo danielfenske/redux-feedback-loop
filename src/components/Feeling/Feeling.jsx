@@ -77,7 +77,7 @@ const Feeling = () => {
             <Container maxWidth="sm">
 
                 <div className="progressBar">
-                    <div className="progressBarStatus"></div>
+                    <div className="progressBarFeeling"></div>
                 </div>
 
                 <Card>

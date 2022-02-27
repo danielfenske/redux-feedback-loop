@@ -2,9 +2,11 @@
     background-color: #eeeeee;
     height: 8px;
     width: 100%;
+    box-shadow: 0px 1px 2px #607d8b;
+    margin-bottom: 25px;
 }
 
-.progressBarStatus {
+.progressBarReview {
     background-color: #009688;
     height: 8px;
     width: 100%;

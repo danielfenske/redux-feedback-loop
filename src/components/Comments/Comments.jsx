@@ -91,7 +91,7 @@ const Comments = () => {
             <Container maxWidth="sm">
 
                 <div className="progressBar">
-                    <div className="progressBarStatus"></div>
+                    <div className="progressBarComments"></div>
                 </div>
 
                 <Card>
@@ -99,20 +99,20 @@ const Comments = () => {
                         <h1>Comments</h1>
                         <p>Any comments you want to leave?</p>
 
-                        {/* <TextField
+                        <TextField
                             id="custom-css-outlined-input"
                             label="Enter comments"
                             multiline
                             maxRows={6}
                             defaultValue={currentComments}
                             onChange={handleInputChange}
-                        /> */}
+                        />
 
-                        <CssTextField 
+                        {/* <CssTextField 
                             label="Custom CSS" 
                             id="custom-css-outlined-input" 
                             onChange={handleInputChange} 
-                        />
+                        /> */}
 
                     </CardContent>
 

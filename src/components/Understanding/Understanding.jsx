@@ -77,7 +77,7 @@ const Understanding = () => {
             <Container maxWidth="sm">
 
                 <div className="progressBar">
-                    <div className="progressBarStatus"></div>
+                    <div className="progressBarUnderstanding"></div>
                 </div>
 
                 <Card>
