@@ -1,0 +1,20 @@
+.progressBar {
+    background-color: #eeeeee;
+    height: 8px;
+    width: 100%;
+}
+
+.progressBarStatus {
+    background-color: #009688;
+    height: 8px;
+    width: 100%;
+}
+
+.submitContainer {
+    display: flex;
+    justify-content: center;
+  }
+
+  .title {
+      font-weight: bold;
+  }
