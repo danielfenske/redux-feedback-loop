@@ -2,12 +2,10 @@
     background-color: #eeeeee;
     height: 8px;
     width: 100%;
-    margin-bottom: 10px;
 }
 
-.progressBarFeeling {
+.progressBarStatus {
     background-color: #009688;
     height: 8px;
     width: 20%;
-    margin-bottom: 10px;
 }

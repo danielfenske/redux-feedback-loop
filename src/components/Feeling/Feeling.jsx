@@ -22,7 +22,7 @@ const Feeling = () => {
     // declare variable for useHistory
     const history = useHistory();
 
-    // useSelector to grab current value of feeling in feedback
+    // useSelector to grab current value in feedback
     const currentFeeling = useSelector((store) => (store.currentFeedback.feeling));
 
     const handleInputChange = (event) => {
@@ -33,43 +33,21 @@ const Feeling = () => {
     const handleNextButton = () => {
         console.log('in handleNextButton');
 
-        if (feeling !== '') {
-
-            dispatch({
-                type: 'ADD_FEELING',
-                payload: Number(feeling)
-            })
-
-            history.push('/understanding');
-        } else if (currentFeeling !== '') {
-            
-            dispatch({
-                type: 'ADD_FEELING',
-                payload: Number(feeling)
-            })
-
-            history.push('/understanding');
-        } else {
+        if (feeling === '') {
             alert(`Please let us know how you're feeling`);
+        } else {
+            dispatch({
+                type: 'ADD_FEELING',
+                payload: Number(feeling)
+            })
+
+            history.push('/understanding');
         }
     }
 
     const handleBackButton = () => {
-        console.log('in handleNextButton');
-
-        if (feeling !== '' || currentFeeling !== '') {
-            dispatch({
-                type: 'ADD_FEELING',
-                payload: Number(feeling)
-            })
-
-            history.push('/');
-        } else {
-            alert(`Please let us know how you're feeling`);
-        }
+        console.log('in handleBackButton');
     }
-
-    console.log('feeling:', feeling);
 
     const FilledButton = styled(Button)(({ theme }) => ({
         color: theme.palette.getContrastText(teal[500]),
@@ -99,7 +77,7 @@ const Feeling = () => {
             <Container maxWidth="sm">
 
                 <div className="progressBar">
-                    <div className="progressBarFeeling"></div>
+                    <div className="progressBarStatus"></div>
                 </div>
 
                 <Card>
