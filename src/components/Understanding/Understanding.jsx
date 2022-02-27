@@ -3,6 +3,9 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from 'react-router-dom';
 
+// import CSS
+import './Understanding.css'
+
 const Understanding = () => {
     // declare state variable for understanding
     const [understanding, setUnderstanding] = useState('');

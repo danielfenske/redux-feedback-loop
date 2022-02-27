@@ -1,0 +1,13 @@
+.progressBar {
+    background-color: #eeeeee;
+    height: 8px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.progressBarUnderstanding {
+    background-color: #009688;
+    height: 8px;
+    width: 40%;
+    margin-bottom: 10px;
+}
