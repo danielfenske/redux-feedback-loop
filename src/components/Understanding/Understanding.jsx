@@ -31,7 +31,6 @@ const Understanding = () => {
 
     // stores input value to dispatch to reducer; sends user to next section of form
     const handleNextButton = () => {
-        console.log('in handleNextButton');
 
         if (understanding === '') {
             alert(`Please let us know how you feel about today's content`);
@@ -94,11 +93,11 @@ const Understanding = () => {
                     </CardContent>
 
                     <CardActions className="cardActionContainer">
-                        <Button
+                        {/* <Button
                             size="small" sx={{ color: 'teal' }}
                             onClick={handleBackButton}>
                             <ArrowBackIcon fontSize="small" />Back
-                        </Button>
+                        </Button> */}
 
                         <FilledButton
                             size="small"

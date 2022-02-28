@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
-import {useEffect} from 'react';
+import { useEffect } from 'react';
 
 // COMPONENT IMPORTS
 import Home from '../Home/Home.jsx';
@@ -23,9 +23,14 @@ function App() {
 
   const dispatch = useDispatch();
 
+  // useSelector to grab current feedback held in redux
   const currentFeedback = useSelector((store) => (store.currentFeedback));
 
+  // useSelector to grab current value of flagged held in redux
+  const flaggedStatus = useSelector((store) => (store.flaggedStatus));
+
   // API ENDPOINTS
+  // retrieves feedback submission history stored in database
   const getFeedbackHistory = () => {
     axios.get('/api/feedback')
       .then((response) => {
@@ -41,6 +46,8 @@ function App() {
       })
   }
 
+  // sends latest feedback submission as request to server 
+  // to store in database
   const postCurrentFeedback = () => {
 
     axios.post('/api/feedback', currentFeedback)
@@ -59,9 +66,16 @@ function App() {
       })
   }
 
+  // updates flagged status in database when bookmark is
+  // toggled in admin section of app
+  const updateFeedbackSubmission = () => {
+
+    console.log(flaggedStatus);
+    // axios.put(`/api/feedback/${id}`,)
+  }
 
   useEffect(() => {
-    getFeedbackHistory(); 
+    getFeedbackHistory();
   }, [])
 
 
@@ -95,13 +109,15 @@ function App() {
         </Route>
 
         <Route path='/review' exact>
-          <Review 
+          <Review
             postCurrentFeedback={postCurrentFeedback}
           />
         </Route>
 
         <Route path='/admin' exact>
-          <Admin />
+          <Admin
+            updateFeedbackSubmission={updateFeedbackSubmission}
+          />
         </Route>
 
         <Route path='/success' exact>

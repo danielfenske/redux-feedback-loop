@@ -94,12 +94,12 @@ const Feeling = () => {
                     </CardContent>
 
                     <CardActions className="cardActionContainer">
-                        <Button 
+                        {/* <Button 
                         size="small" 
                         sx={{ color: 'teal' }} 
                         onClick={handleBackButton}>
                             <ArrowBackIcon fontSize="small"/>Back
-                        </Button>
+                        </Button> */}
 
                         <FilledButton 
                         size="small" 

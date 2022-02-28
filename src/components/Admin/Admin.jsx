@@ -12,7 +12,7 @@ import { teal } from '@mui/material/colors';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 
-const Admin = () => {
+const Admin = ({updateFeedbackSubmission}) => {
 
     // declare useSelector as new variable (gets state of feedbackHistory reducer)
     const feedbackHistory = useSelector((store) => store.feedbackHistory);
@@ -41,6 +41,7 @@ const Admin = () => {
                                     <AdminItem
                                         key={feedback.id}
                                         feedback={feedback}
+                                        updateFeedbackSubmission={updateFeedbackSubmission}
                                     />
                                 ))}
                             </TableBody>

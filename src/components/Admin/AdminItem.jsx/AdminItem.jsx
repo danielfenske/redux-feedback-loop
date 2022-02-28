@@ -1,6 +1,6 @@
 // import necessary redux/react components for this page
 import { useState } from "react";
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 
 // import Material UI
 import { TableCell, TableRow } from '@mui/material';
@@ -8,23 +8,28 @@ import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 
 
-const AdminItem = ({feedback}) => {
-    
+const AdminItem = ({ feedback, updateFeedbackSubmission }) => {
+
     // declare state variable for support
-    const [flaggedStatus, setFlaggedStatus] = useState(feedback.flagged);
+    const [flagged, setFlagged] = useState(feedback.flagged);
 
     // declare variable for useDispatch
     const dispatch = useDispatch();
 
     const handleClick = () => {
-        console.log('in handleClick', flaggedStatus);
+        console.log('in handleClick', flagged);
 
-        setFlaggedStatus(!flaggedStatus);
+        let id = feedback.id;
+        setFlagged(!flagged);
+
+        let bundledObject = { flagged: flagged, id: id };
 
         dispatch({
-            type: 'ADD_FLAGGED',
-            payload: flaggedStatus
+            type: 'UPDATE_FLAGGED',
+            payload: bundledObject
         });
+
+        updateFeedbackSubmission();
     }
 
     return (
