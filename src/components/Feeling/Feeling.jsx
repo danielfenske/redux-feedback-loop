@@ -7,6 +7,7 @@ import { useHistory } from 'react-router-dom';
 import { Rating, Button, Container, styled, Card, CardContent, CardActions } from '@mui/material';
 import { teal } from '@mui/material/colors';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 // import CSS
@@ -45,8 +46,16 @@ const Feeling = () => {
         }
     }
 
+    console.log(currentFeeling);
+
     const handleBackButton = () => {
         console.log('in handleBackButton');
+
+        dispatch({
+            type: 'CLEAR_FEEDBACK'
+        })
+
+        history.push('/');
     }
 
     const FilledButton = styled(Button)(({ theme }) => ({
@@ -94,17 +103,18 @@ const Feeling = () => {
                     </CardContent>
 
                     <CardActions className="cardActionContainer">
-                        {/* <Button 
-                        size="small" 
-                        sx={{ color: 'teal' }} 
-                        onClick={handleBackButton}>
-                            <ArrowBackIcon fontSize="small"/>Back
-                        </Button> */}
+                        <Button
+                            size="small"
+                            sx={{ color: 'teal' }}
+                            onClick={handleBackButton}>
+                            <ArrowBackIcon fontSize="small" />
+                            <HomeRoundedIcon fontSize="medium" />
+                        </Button>
 
-                        <FilledButton 
-                        size="small" 
-                        onClick={handleNextButton}>
-                            Next<ArrowForwardIcon fontSize="small"/>
+                        <FilledButton
+                            size="small"
+                            onClick={handleNextButton}>
+                            Next<ArrowForwardIcon fontSize="small" />
                         </FilledButton>
 
                     </CardActions>
