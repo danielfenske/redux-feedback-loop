@@ -79,11 +79,11 @@ const Home = () => {
                             <Table sx={{ minWidth: 200 }} size="small" aria-label="a dense table">
                                 <TableHead>
                                     <TableRow>
-                                        <TableCell>Feeling</TableCell>
-                                        <TableCell>Understanding</TableCell>
-                                        <TableCell>Support</TableCell>
-                                        <TableCell>Comments</TableCell>
-                                        <TableCell>Date</TableCell>
+                                        <TableCell sx={{fontWeight: 'bold'}}>Feeling</TableCell>
+                                        <TableCell sx={{fontWeight: 'bold'}}>Understanding</TableCell>
+                                        <TableCell sx={{fontWeight: 'bold'}}>Support</TableCell>
+                                        <TableCell sx={{fontWeight: 'bold'}}>Comments</TableCell>
+                                        <TableCell sx={{fontWeight: 'bold'}}>Date</TableCell>
                                     </TableRow>
                                 </TableHead>
 
