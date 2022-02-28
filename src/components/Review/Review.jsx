@@ -27,10 +27,6 @@ const Review = ({ postCurrentFeedback }) => {
         history.push('/success');
     }
 
-    const handleBackButton = () => {
-        console.log('in handleBackButton');
-    }
-
     const FilledButton = styled(Button)(({ theme }) => ({
         color: theme.palette.getContrastText(teal[500]),
         backgroundColor: teal[500],
@@ -114,7 +110,11 @@ const Review = ({ postCurrentFeedback }) => {
                     </CardContent>
 
                     <CardActions className="submitContainer">
-                        <FilledButton size="small" onClick={handleNextButton}>Submit</FilledButton>
+                        <FilledButton 
+                        size="small" 
+                        onClick={handleNextButton}>
+                            Submit
+                        </FilledButton>
                     </CardActions>
                 </Card>
             </Container>

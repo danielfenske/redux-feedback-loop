@@ -35,10 +35,6 @@ const currentFeedback = (state=INITIAL_STATE, action) => {
             const comments = action.payload;
             return {...state, comments: comments};
 
-        case 'ADD_FLAGGED':
-            const flagged = action.payload;
-            return {...state, flagged: flagged};
-
         case 'CLEAR_FEEDBACK':
             return INITIAL_STATE;   
 
@@ -47,6 +43,15 @@ const currentFeedback = (state=INITIAL_STATE, action) => {
     }
 }
 
-const rootReducer = combineReducers({feedbackHistory, currentFeedback});
+// this reducer is responsible for storing a change in value
+// for the flagged property of a form submission 
+const flaggedStatus = (state={}, action) => {
+    if (action.type === 'UPDATE_FLAGGED') {
+        return action.payload;
+    }
+    return state;
+}
+
+const rootReducer = combineReducers({feedbackHistory, currentFeedback, flaggedStatus});
 
 export default rootReducer;
