@@ -1,3 +1,6 @@
+// import children component
+import AdminItem from "./AdminItem.jsx/AdminItem";
+
 // import necessary redux/react components for this page
 import { useState } from "react";
 import { useSelector } from "react-redux";
@@ -35,20 +38,10 @@ const Admin = () => {
 
                             <TableBody>
                                 {feedbackHistory.map((feedback) => (
-                                    <TableRow
+                                    <AdminItem
                                         key={feedback.id}
-                                    >
-                                        <TableCell component="th" scope="row">
-                                            {feedback.feeling}
-                                        </TableCell>
-                                        <TableCell>{feedback.understanding}</TableCell>
-                                        <TableCell>{feedback.support}</TableCell>
-                                        <TableCell>{feedback.comments}</TableCell>
-                                        <TableCell>{feedback.date}</TableCell>
-                                        {(feedback.flagged) 
-                                        ? (<TableCell><BookmarkIcon fontSize="small" sx={{color: 'teal'}}/></TableCell>) 
-                                        : (<TableCell><BookmarkBorderIcon fontSize="small" sx={{color: 'teal'}}/></TableCell>)}
-                                    </TableRow>
+                                        feedback={feedback}
+                                    />
                                 ))}
                             </TableBody>
                         </Table>
