@@ -26,7 +26,6 @@ const Comments = () => {
     const currentComments = useSelector((store) => (store.currentFeedback.comments));
 
     const handleInputChange = (event) => {
-        console.log(event.target.value);
         setComments(event.target.value);
     }
 
