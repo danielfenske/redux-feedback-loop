@@ -46,6 +46,8 @@ const Understanding = () => {
 
     const handleBackButton = () => {
         console.log('in handleBackButton');
+
+        history.push('/feeling');
     }
 
     const FilledButton = styled(Button)(({ theme }) => ({
@@ -93,11 +95,11 @@ const Understanding = () => {
                     </CardContent>
 
                     <CardActions className="cardActionContainer">
-                        {/* <Button
+                        <Button
                             size="small" sx={{ color: 'teal' }}
                             onClick={handleBackButton}>
                             <ArrowBackIcon fontSize="small" />Back
-                        </Button> */}
+                        </Button>
 
                         <FilledButton
                             size="small"

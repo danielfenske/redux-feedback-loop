@@ -26,15 +26,22 @@ const Feeling = () => {
     // useSelector to grab current value in feedback
     const currentFeeling = useSelector((store) => (store.currentFeedback.feeling));
 
-    const handleInputChange = (event) => {
-        setFeeling(event.target.value);
-    }
+    console.log('test', currentFeeling);
+
+    // const handleInputChange = (event) => {
+    //     setFeeling(event.target.value);
+
+    //     dispatch({
+    //         type: 'ADD_FEELING',
+    //         payload: Number(feeling)
+    //     })
+    // }
 
     // stores input value to dispatch to reducer; sends user to next section of form
     const handleNextButton = () => {
         console.log('in handleNextButton');
 
-        if (feeling === '') {
+        if (currentFeeling === 0) {
             alert(`Please let us know how you're feeling`);
         } else {
             dispatch({
@@ -47,6 +54,8 @@ const Feeling = () => {
     }
 
     console.log(currentFeeling);
+
+    console.log(feeling);
 
     const handleBackButton = () => {
         console.log('in handleBackButton');
@@ -93,11 +102,11 @@ const Feeling = () => {
                     <CardContent>
                         <h1>Feeling</h1>
                         <p>How are you feeling today?</p>
-
+                    
                         <Rating
                             name="simple-controlled"
                             defaultValue={currentFeeling}
-                            onChange={handleInputChange}
+                            onChange={(event, feeling) => setFeeling(feeling)}
                             size="large"
                         />
                     </CardContent>
@@ -108,7 +117,7 @@ const Feeling = () => {
                             sx={{ color: 'teal' }}
                             onClick={handleBackButton}>
                             <ArrowBackIcon fontSize="small" />
-                            <HomeRoundedIcon fontSize="medium" />
+                            <HomeRoundedIcon fontSize="small" />
                         </Button>
 
                         <FilledButton
