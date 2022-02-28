@@ -116,8 +116,19 @@ const Comments = () => {
                     </CardContent>
 
                     <CardActions className="cardActionContainer">
-                        <Button size="small" sx={{ color: 'teal' }} onClick={handleBackButton}><ArrowBackIcon fontSize="small" />Back</Button>
-                        <FilledButton size="small" onClick={handleNextButton}>Review<ArrowForwardIcon fontSize="small" /></FilledButton>
+                        <Button 
+                        size="small" 
+                        sx={{ color: 'teal' }} 
+                        onClick={handleBackButton}>
+                            <ArrowBackIcon fontSize="small" />Back
+                        </Button>
+
+                        <FilledButton 
+                        size="small" 
+                        onClick={handleNextButton}>
+                            Review<ArrowForwardIcon fontSize="small" />
+                        </FilledButton>
+                        
                     </CardActions>
                 </Card>
             </Container>

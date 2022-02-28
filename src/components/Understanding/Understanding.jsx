@@ -33,15 +33,15 @@ const Understanding = () => {
     const handleNextButton = () => {
         console.log('in handleNextButton');
 
-        if (understanding !== '') {
+        if (understanding === '') {
+            alert(`Please let us know how you feel about today's content`);
+        } else {
             dispatch({
                 type: 'ADD_UNDERSTANDING',
                 payload: Number(understanding)
             })
 
             history.push('/support');
-        } else {
-            alert(`Please let us know how you feel about today's content`);
         }
     }
 
@@ -94,8 +94,18 @@ const Understanding = () => {
                     </CardContent>
 
                     <CardActions className="cardActionContainer">
-                        <Button size="small" sx={{ color: 'teal' }} onClick={handleBackButton}><ArrowBackIcon fontSize="small" />Back</Button>
-                        <FilledButton size="small" onClick={handleNextButton}>Next<ArrowForwardIcon fontSize="small" /></FilledButton>
+                        <Button
+                            size="small" sx={{ color: 'teal' }}
+                            onClick={handleBackButton}>
+                            <ArrowBackIcon fontSize="small" />Back
+                        </Button>
+
+                        <FilledButton
+                            size="small"
+                            onClick={handleNextButton}>
+                            Next<ArrowForwardIcon fontSize="small" />
+                        </FilledButton>
+
                     </CardActions>
                 </Card>
             </Container>
