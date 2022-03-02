@@ -14,16 +14,13 @@ import './Understanding.css'
 
 const Understanding = () => {
     // declare state variable for understanding
-    const [understanding, setUnderstanding] = useState('');
+    const [understanding, setUnderstanding] = useState(null);
 
     // declare variable for useDispatch
     const dispatch = useDispatch();
 
     // declare variable for useHistory
     const history = useHistory();
-
-    // useSelector to grab current value in feedback
-    const currentUnderstanding = useSelector((store) => (store.currentFeedback.understanding));
 
     const handleInputChange = (event) => {
         setUnderstanding(event.target.value);
@@ -32,7 +29,7 @@ const Understanding = () => {
     // stores input value to dispatch to reducer; sends user to next section of form
     const handleNextButton = () => {
 
-        if (understanding === '') {
+        if (understanding === null) {
             alert(`Please let us know how you feel about today's content`);
         } else {
             dispatch({
@@ -60,21 +57,6 @@ const Understanding = () => {
 
     return (
         <>
-            {/* <div className="formContainer">
-                <h1>Content</h1>
-                <p>How well do you understand today's content?</p>
-
-                <input
-                    type="number"
-                    onChange={handleInputChange}
-                    placeholder="choose between 1-5"
-                    min="0"
-                    max="5"
-                />
-
-                <button onClick={handleClick}>Next</button>
-            </div> */}
-
             <Container maxWidth="sm">
 
                 <div className="progressBar">
@@ -88,7 +70,7 @@ const Understanding = () => {
 
                         <Rating
                             name="simple-controlled"
-                            defaultValue={currentUnderstanding}
+                            defaultValue={null}
                             onChange={handleInputChange}
                             size="large"
                         />

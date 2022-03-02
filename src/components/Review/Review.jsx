@@ -37,21 +37,6 @@ const Review = ({ postCurrentFeedback }) => {
 
     return (
         <>
-            {/* <div className="formContainer">
-                <h1>Review</h1>
-
-                <table>
-                    <tbody>
-                        <tr><th>Feeling</th><td>{currentFeedback.feeling}</td></tr>
-                        <tr><th>Understanding</th><td>{currentFeedback.understanding}</td></tr>
-                        <tr><th>Support</th><td>{currentFeedback.support}</td></tr>
-                        <tr><th>Comments</th><td>{currentFeedback.comments}</td></tr>
-                    </tbody>
-                </table>
-
-                <button onClick={handleNextButton}>Submit</button>
-            </div> */}
-
             <Container maxWidth="sm">
 
                 <div className="progressBar">

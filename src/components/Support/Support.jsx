@@ -14,16 +14,13 @@ import './Support.css';
 
 const Support = () => {
     // declare state variable for support
-    const [support, setSupport] = useState('');
+    const [support, setSupport] = useState(null);
 
     // declare variable for useDispatch
     const dispatch = useDispatch();
 
     // declare variable for useHistory
     const history = useHistory();
-
-    // useSelector to grab current value in feedback
-    const currentSupport = useSelector((store) => (store.currentFeedback.support));
 
     const handleInputChange = (event) => {
         setSupport(event.target.value);
@@ -33,7 +30,7 @@ const Support = () => {
     const handleNextButton = () => {
         console.log('in handleNextButton');
 
-        if (support === '') {
+        if (support === null) {
             alert(`Please let us know if you felt supported today`);
 
         } else {
@@ -48,6 +45,8 @@ const Support = () => {
 
     const handleBackButton = () => {
         console.log('in handleBackButton');
+
+        history.push('/understanding');
     }
 
     const FilledButton = styled(Button)(({ theme }) => ({
@@ -60,21 +59,6 @@ const Support = () => {
 
     return (
         <>
-            {/* <div className="formContainer">
-                <h1>Support</h1>
-                <p>How well are you being supported?</p>
-
-                <input
-                    type="number"
-                    onChange={handleInputChange}
-                    placeholder="choose between 1-5"
-                    min="0"
-                    max="5"
-                />
-
-                <button onClick={handleNextButton}>Next</button>
-            </div> */}
-
             <Container maxWidth="sm">
 
                 <div className="progressBar">
@@ -88,19 +72,19 @@ const Support = () => {
 
                         <Rating
                             name="simple-controlled"
-                            defaultValue={currentSupport}
+                            defaultValue={null}
                             onChange={handleInputChange}
                             size="large"
                         />
                     </CardContent>
 
                     <CardActions className="cardActionContainer">
-                        {/* <Button 
+                        <Button 
                         size="small" 
                         sx={{ color: 'teal' }} 
                         onClick={handleBackButton}>
                             <ArrowBackIcon fontSize="small" />Back
-                        </Button> */}
+                        </Button>
 
                         <FilledButton 
                         size="small" 
