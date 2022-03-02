@@ -21,6 +21,7 @@ const Admin = ({updateFeedbackSubmission}) => {
         <Container maxWidth="md">
             <Card>
                 <h1>Admin</h1>
+                <p>Please bookmark a submission that requires further attention.</p>
                 <CardContent>
                     <TableContainer className="tableContainer">
                         <h3>Feedback History</h3>
