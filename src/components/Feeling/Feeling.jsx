@@ -15,7 +15,7 @@ import './Feeling.css';
 
 const Feeling = () => {
     // declare state variable for feeling
-    const [feeling, setFeeling] = useState('');
+    const [feeling, setFeeling] = useState(null);
 
     // declare variable for useDispatch
     const dispatch = useDispatch();
@@ -23,25 +23,15 @@ const Feeling = () => {
     // declare variable for useHistory
     const history = useHistory();
 
-    // useSelector to grab current value in feedback
-    const currentFeeling = useSelector((store) => (store.currentFeedback.feeling));
-
-    console.log('test', currentFeeling);
-
-    // const handleInputChange = (event) => {
-    //     setFeeling(event.target.value);
-
-    //     dispatch({
-    //         type: 'ADD_FEELING',
-    //         payload: Number(feeling)
-    //     })
-    // }
+    const handleInputChange = (event) => {
+        setFeeling(event.target.value);
+    }
 
     // stores input value to dispatch to reducer; sends user to next section of form
     const handleNextButton = () => {
         console.log('in handleNextButton');
 
-        if (currentFeeling === 0) {
+        if (feeling === null) {
             alert(`Please let us know how you're feeling`);
         } else {
             dispatch({
@@ -52,10 +42,6 @@ const Feeling = () => {
             history.push('/understanding');
         }
     }
-
-    console.log(currentFeeling);
-
-    console.log(feeling);
 
     const handleBackButton = () => {
         console.log('in handleBackButton');
@@ -77,21 +63,6 @@ const Feeling = () => {
 
     return (
         <>
-            {/* <div className="formContainer">
-                <h1>Feeling</h1>
-                <p>How are you feeling today?</p>
-
-                <input
-                type="number"
-                onChange={handleInputChange}
-                placeholder="choose between 1-5"
-                min="0"
-                max="5"
-            />
-
-                <button onClick={handleClick}>Next</button>
-            </div> */}
-
             <Container maxWidth="sm">
 
                 <div className="progressBar">
@@ -102,13 +73,16 @@ const Feeling = () => {
                     <CardContent>
                         <h1>Feeling</h1>
                         <p>How are you feeling today?</p>
-                    
-                        <Rating
-                            name="simple-controlled"
-                            defaultValue={currentFeeling}
-                            onChange={(event, feeling) => setFeeling(feeling)}
-                            size="large"
-                        />
+
+                        <form>
+                            <Rating
+                                name="simple-controlled"
+                                defaultValue={null}
+                                onChange={handleInputChange}
+                                size="large"
+                            />
+                        </form>
+
                     </CardContent>
 
                     <CardActions className="cardActionContainer">
