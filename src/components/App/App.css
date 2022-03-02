@@ -11,6 +11,11 @@ body {
   background-color: #eceff1;
 }
 
+
+.tableContainer {
+  background-color: #f4f8fa;
+}
+
 .App-header {
   background-color: #00695c;
   min-height: 70px;

@@ -22,7 +22,7 @@ const Admin = ({updateFeedbackSubmission}) => {
             <Card>
                 <h1>Admin</h1>
                 <CardContent>
-                    <TableContainer>
+                    <TableContainer className="tableContainer">
                         <h3>Feedback History</h3>
                         <Table sx={{ minWidth: 200 }} size="small" aria-label="a dense table">
                             <TableHead>
