@@ -68,7 +68,7 @@ const Home = () => {
                                             <TableCell>{feedback.understanding}</TableCell>
                                             <TableCell>{feedback.support}</TableCell>
                                             <TableCell>{feedback.comments}</TableCell>
-                                            <TableCell>{feedback.date}</TableCell>
+                                            <TableCell>{(Date(feedback.date).slice(0,15))}</TableCell>
                                         </TableRow>
                                     ))}
                                 </TableBody>

@@ -29,7 +29,7 @@ const AdminItem = ({ feedback, updateFeedbackSubmission }) => {
                 <TableCell>{feedback.understanding}</TableCell>
                 <TableCell>{feedback.support}</TableCell>
                 <TableCell>{feedback.comments}</TableCell>
-                <TableCell>{Date(feedback.date)}</TableCell>
+                <TableCell>{Date(feedback.date).slice(0,15)}</TableCell>
                 {(feedback.flagged)
                     ? (<TableCell><BookmarkIcon fontSize="small" sx={{ color: 'teal' }} onClick={handleClick} /></TableCell>)
                     : (<TableCell><BookmarkBorderIcon fontSize="small" sx={{ color: 'teal' }} onClick={handleClick} /></TableCell>)}
