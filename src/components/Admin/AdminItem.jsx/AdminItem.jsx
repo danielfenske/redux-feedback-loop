@@ -1,5 +1,4 @@
 // import necessary redux/react components for this page
-import { useState } from "react";
 import { useDispatch } from "react-redux";
 
 // import Material UI
@@ -10,26 +9,15 @@ import BookmarkIcon from '@mui/icons-material/Bookmark';
 
 const AdminItem = ({ feedback, updateFeedbackSubmission }) => {
 
-    // declare state variable for support
-    const [flagged, setFlagged] = useState(feedback.flagged);
-
     // declare variable for useDispatch
     const dispatch = useDispatch();
 
     const handleClick = () => {
-        console.log('in handleClick', flagged);
+        console.log('in handleClick');
 
-        let id = feedback.id;
-        setFlagged(!flagged);
+        let bundledObject = { flagged: !feedback.flagged, id: feedback.id };
 
-        let bundledObject = { flagged: flagged, id: id };
-
-        dispatch({
-            type: 'UPDATE_FLAGGED',
-            payload: bundledObject
-        });
-
-        updateFeedbackSubmission();
+        updateFeedbackSubmission(bundledObject);
     }
 
     return (
@@ -41,7 +29,7 @@ const AdminItem = ({ feedback, updateFeedbackSubmission }) => {
                 <TableCell>{feedback.understanding}</TableCell>
                 <TableCell>{feedback.support}</TableCell>
                 <TableCell>{feedback.comments}</TableCell>
-                <TableCell>{feedback.date}</TableCell>
+                <TableCell>{Date(feedback.date)}</TableCell>
                 {(feedback.flagged)
                     ? (<TableCell><BookmarkIcon fontSize="small" sx={{ color: 'teal' }} onClick={handleClick} /></TableCell>)
                     : (<TableCell><BookmarkBorderIcon fontSize="small" sx={{ color: 'teal' }} onClick={handleClick} /></TableCell>)}

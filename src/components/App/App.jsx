@@ -68,10 +68,10 @@ function App() {
 
   // updates flagged status in database when bookmark is
   // toggled in admin section of app
-  const updateFeedbackSubmission = () => {
-
-    console.log(flaggedStatus);
-    // axios.put(`/api/feedback/${id}`,)
+  const updateFeedbackSubmission = (feedback) => {
+    axios.put(`/api/feedback/${feedback.id}`, feedback).then((response) => {
+      getFeedbackHistory();
+    })
   }
 
   useEffect(() => {
