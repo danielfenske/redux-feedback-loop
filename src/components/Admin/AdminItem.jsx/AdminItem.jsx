@@ -9,9 +9,6 @@ import BookmarkIcon from '@mui/icons-material/Bookmark';
 
 const AdminItem = ({ feedback, updateFeedbackSubmission }) => {
 
-    // declare variable for useDispatch
-    const dispatch = useDispatch();
-
     const handleClick = () => {
         console.log('in handleClick');
 

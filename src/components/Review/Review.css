@@ -1,15 +1,14 @@
-.progressBar {
-    background-color: #eeeeee;
-    height: 8px;
-    width: 100%;
-    box-shadow: 0px 1px 2px #607d8b;
-    margin-bottom: 25px;
-}
-
 .progressBarReview {
     background-color: #009688;
     height: 8px;
-    width: 100%;
+    width: 99%;
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    background: #009688;
+    border-radius: 50%;
 }
 
 .submitContainer {

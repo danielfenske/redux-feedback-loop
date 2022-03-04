@@ -77,6 +77,7 @@ const Comments = () => {
 
                 <div className="progressBar">
                     <div className="progressBarComments"></div>
+                    <div className="circle"></div>
                 </div>
 
                 <Card>
@@ -102,19 +103,19 @@ const Comments = () => {
                     </CardContent>
 
                     <CardActions className="cardActionContainer">
-                        <Button 
-                        size="small" 
-                        sx={{ color: 'teal' }} 
-                        onClick={handleBackButton}>
+                        <Button
+                            size="small"
+                            sx={{ color: 'teal' }}
+                            onClick={handleBackButton}>
                             <ArrowBackIcon fontSize="small" />Back
                         </Button>
 
-                        <FilledButton 
-                        size="small" 
-                        onClick={handleNextButton}>
+                        <FilledButton
+                            size="small"
+                            onClick={handleNextButton}>
                             Review<ArrowForwardIcon fontSize="small" />
                         </FilledButton>
-                        
+
                     </CardActions>
                 </Card>
             </Container>

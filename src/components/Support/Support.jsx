@@ -63,6 +63,7 @@ const Support = () => {
 
                 <div className="progressBar">
                     <div className="progressBarSupport"></div>
+                    <div className="circle"></div>
                 </div>
 
                 <Card>
@@ -79,17 +80,17 @@ const Support = () => {
                     </CardContent>
 
                     <CardActions className="cardActionContainer">
-                        <Button 
-                        size="small" 
-                        sx={{ color: 'teal' }} 
-                        onClick={handleBackButton}>
+                        <Button
+                            size="small"
+                            sx={{ color: 'teal' }}
+                            onClick={handleBackButton}>
                             <ArrowBackIcon fontSize="small" />Back
                         </Button>
 
-                        <FilledButton 
-                        size="small" 
-                        onClick={handleNextButton}
-                            >Next<ArrowForwardIcon fontSize="small" />
+                        <FilledButton
+                            size="small"
+                            onClick={handleNextButton}
+                        >Next<ArrowForwardIcon fontSize="small" />
                         </FilledButton>
 
                     </CardActions>

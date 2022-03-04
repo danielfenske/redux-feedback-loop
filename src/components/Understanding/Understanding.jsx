@@ -61,6 +61,7 @@ const Understanding = () => {
 
                 <div className="progressBar">
                     <div className="progressBarUnderstanding"></div>
+                    <div className="circle"></div>
                 </div>
 
                 <Card>

@@ -26,9 +26,6 @@ function App() {
   // useSelector to grab current feedback held in redux
   const currentFeedback = useSelector((store) => (store.currentFeedback));
 
-  // useSelector to grab current value of flagged held in redux
-  const flaggedStatus = useSelector((store) => (store.flaggedStatus));
-
   // API ENDPOINTS
   // retrieves feedback submission history stored in database
   const getFeedbackHistory = () => {

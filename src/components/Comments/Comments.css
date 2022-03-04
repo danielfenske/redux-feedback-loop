@@ -1,11 +1,12 @@
-.progressBar {
-    background-color: #eeeeee;
-    height: 8px;
-    width: 100%;
-}
-
 .progressBarComments {
     background-color: #009688;
     height: 8px;
     width: 80%;
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    background: #009688;
+    border-radius: 50%;
 }

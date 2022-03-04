@@ -11,11 +11,6 @@ body {
   background-color: #eceff1;
 }
 
-
-.tableContainer {
-  background-color: #f4f8fa;
-}
-
 .App-header {
   background-color: #00695c;
   min-height: 70px;
@@ -43,4 +38,15 @@ input {
 .cardActionContainer {
   display: flex;
   justify-content: space-between;
+}
+
+.progressBar {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: white;
+  height: 8px;
+  width: 100%;
 }

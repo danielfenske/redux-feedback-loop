@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 
 // import Material UI
-import { Rating, Button, Container, styled, Card, CardContent, CardActions } from '@mui/material';
+import { Button, Container, styled, Card, CardContent, CardActions } from '@mui/material';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import { teal } from '@mui/material/colors';
 
@@ -44,7 +44,7 @@ const Home = () => {
                     </CardActions>
 
                     <CardContent>
-                        <TableContainer className="tableContainer">
+                        <TableContainer  component={Paper} sx={{backgroundColor: '#f4f8fa'}}>
                             <h3>Feedback History</h3>
                             <Table sx={{ minWidth: 200 }} size="small" aria-label="a dense table">
                                 <TableHead>

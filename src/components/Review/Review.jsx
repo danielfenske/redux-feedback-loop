@@ -41,11 +41,12 @@ const Review = ({ postCurrentFeedback }) => {
 
                 <div className="progressBar">
                     <div className="progressBarReview"></div>
+                    <div className="circle"></div>
                 </div>
 
                 <Card>
                     <CardContent>
-                    <h1>Review</h1>
+                        <h1>Review</h1>
                         <TableContainer>
                             <Table sx={{ minWidth: 200 }} size="small" aria-label="a dense table">
                                 <TableBody>
@@ -95,9 +96,9 @@ const Review = ({ postCurrentFeedback }) => {
                     </CardContent>
 
                     <CardActions className="submitContainer">
-                        <FilledButton 
-                        size="small" 
-                        onClick={handleNextButton}>
+                        <FilledButton
+                            size="small"
+                            onClick={handleNextButton}>
                             Submit
                         </FilledButton>
                     </CardActions>

@@ -67,6 +67,7 @@ const Feeling = () => {
 
                 <div className="progressBar">
                     <div className="progressBarFeeling"></div>
+                    <div className="circle"></div>
                 </div>
 
                 <Card>
