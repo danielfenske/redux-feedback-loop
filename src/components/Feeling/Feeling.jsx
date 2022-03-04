@@ -53,13 +53,13 @@ const Feeling = () => {
         history.push('/');
     }
 
-    const FilledButton = styled(Button)(({ theme }) => ({
-        color: theme.palette.getContrastText(teal[500]),
-        backgroundColor: teal[500],
-        '&:hover': {
-            backgroundColor: teal[700],
-        },
-    }));
+    // const FilledButton = styled(Button)(({ theme }) => ({
+    //     color: theme.palette.getContrastText(teal[500]),
+    //     backgroundColor: teal[500],
+    //     '&:hover': {
+    //         backgroundColor: teal[700],
+    //     },
+    // }));
 
     return (
         <>
@@ -89,17 +89,17 @@ const Feeling = () => {
                     <CardActions className="cardActionContainer">
                         <Button
                             size="small"
-                            sx={{ color: 'teal' }}
                             onClick={handleBackButton}>
                             <ArrowBackIcon fontSize="small" />
                             <HomeRoundedIcon fontSize="small" />
                         </Button>
 
-                        <FilledButton
+                        <Button
                             size="small"
+                            variant="contained"
                             onClick={handleNextButton}>
                             Next<ArrowForwardIcon fontSize="small" />
-                        </FilledButton>
+                        </Button>
 
                     </CardActions>
                 </Card>

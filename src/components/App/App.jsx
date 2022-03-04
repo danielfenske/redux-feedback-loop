@@ -14,10 +14,22 @@ import Admin from '../Admin/Admin.jsx';
 import Success from '../Success/Success.jsx';
 
 // IMPORT ROUTING
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 
 // IMPORT REDUX COMPONENTS
 import { useDispatch, useSelector } from 'react-redux';
+
+// IMPORT MATERIAL UI
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { teal } from '@mui/material/colors';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: teal[500],
+    },
+  },
+});
 
 function App() {
 
@@ -77,52 +89,55 @@ function App() {
 
 
   return (
-    <Router>
-      <div className='App'>
-        <header className='App-header'>
-          <h1 className='App-title'>Feedback!</h1>
-          <h4>Don't forget it!</h4>
-        </header>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <div className='App'>
+          <header className='App-header'>
+            <h1 className='App-title'>Feedback!</h1>
+            <h4>Don't forget it!</h4>
+          </header>
+          <main>
+            <Route path='/' exact>
+              <Home />
+            </Route>
 
-        <Route path='/' exact>
-          <Home />
-        </Route>
+            <Route path='/feeling' exact>
+              <Feeling />
+            </Route>
 
-        <Route path='/feeling' exact>
-          <Feeling />
-        </Route>
+            <Route path='/understanding' exact>
+              <Understanding />
+            </Route>
 
-        <Route path='/understanding' exact>
-          <Understanding />
-        </Route>
-
-        <Route path='/support' exact>
-          <Support />
-        </Route>
+            <Route path='/support' exact>
+              <Support />
+            </Route>
 
 
-        <Route path='/comments' exact>
-          <Comments />
-        </Route>
+            <Route path='/comments' exact>
+              <Comments />
+            </Route>
 
-        <Route path='/review' exact>
-          <Review
-            postCurrentFeedback={postCurrentFeedback}
-          />
-        </Route>
+            <Route path='/review' exact>
+              <Review
+                postCurrentFeedback={postCurrentFeedback}
+              />
+            </Route>
 
-        <Route path='/admin' exact>
-          <Admin
-            updateFeedbackSubmission={updateFeedbackSubmission}
-          />
-        </Route>
+            <Route path='/admin' exact>
+              <Admin
+                updateFeedbackSubmission={updateFeedbackSubmission}
+              />
+            </Route>
 
-        <Route path='/success' exact>
-          <Success />
-        </Route>
+            <Route path='/success' exact>
+              <Success />
+            </Route>
+          </main>
+        </div>
+      </Router>
 
-      </div>
-    </Router>
+    </ThemeProvider>
   );
 }
 

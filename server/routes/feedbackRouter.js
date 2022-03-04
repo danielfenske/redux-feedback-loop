@@ -6,7 +6,7 @@ const pool = require('../modules/pool');
 router.get('/', (req, res) => {
     console.log('GET /api/feedback');
 
-    let queryText = 'SELECT * from "feedback" ORDER BY "date" DESC;'
+    let queryText = 'SELECT * from "feedback" ORDER BY "date" ASC;'
     
     pool.query(queryText)
         .then((result) => {

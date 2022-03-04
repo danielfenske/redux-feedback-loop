@@ -4,7 +4,7 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
-  gap: 75px;
+  gap: 25px;
 }
 
 body {
@@ -17,6 +17,11 @@ body {
   color: white;
   margin-bottom: 20px;
   width: 100vw;
+}
+
+main {
+  width: 100%;
+  padding: 25px;
 }
 
 .App-title {
