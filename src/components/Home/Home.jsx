@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 
 // import Material UI
-import { Rating, Button, Container, styled, Card, CardContent, CardActions } from '@mui/material';
+import { Button, Container, styled, Card, CardContent, CardActions } from '@mui/material';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import { teal } from '@mui/material/colors';
 
@@ -34,36 +34,6 @@ const Home = () => {
 
     return (
         <>
-            {/* <div className="formContainer">
-                <h1>Feedback</h1>
-                <button onClick={handleNextButton}>Get Started</button>
-
-                <h1>Feedback History</h1>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Feeling</th>
-                            <th>Understanding</th>
-                            <th>Support</th>
-                            <th>Comments</th>
-                            <th>Date</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        {feedbackHistory.map((feedback, id) =>
-                            <tr key={id}>
-                                <td>{feedback.feeling}</td>
-                                <td>{feedback.understanding}</td>
-                                <td>{feedback.support}</td>
-                                <td>{feedback.comments}</td>
-                                <td>{feedback.date}</td>
-                            </tr>
-                        )}
-                    </tbody>
-                </table>
-            </div> */}
-
             <Container maxWidth="md">
 
                 <Card>
@@ -74,7 +44,7 @@ const Home = () => {
                     </CardActions>
 
                     <CardContent>
-                        <TableContainer>
+                        <TableContainer  component={Paper} sx={{backgroundColor: '#f4f8fa'}}>
                             <h3>Feedback History</h3>
                             <Table sx={{ minWidth: 200 }} size="small" aria-label="a dense table">
                                 <TableHead>
@@ -98,7 +68,7 @@ const Home = () => {
                                             <TableCell>{feedback.understanding}</TableCell>
                                             <TableCell>{feedback.support}</TableCell>
                                             <TableCell>{feedback.comments}</TableCell>
-                                            <TableCell>{feedback.date}</TableCell>
+                                            <TableCell>{(Date(feedback.date).slice(0,15))}</TableCell>
                                         </TableRow>
                                     ))}
                                 </TableBody>

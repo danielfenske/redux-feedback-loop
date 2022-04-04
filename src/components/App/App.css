@@ -4,7 +4,7 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
-  gap: 75px;
+  gap: 25px;
 }
 
 body {
@@ -17,6 +17,11 @@ body {
   color: white;
   margin-bottom: 20px;
   width: 100vw;
+}
+
+main {
+  width: 100%;
+  padding-bottom: 25px;
 }
 
 .App-title {
@@ -37,5 +42,16 @@ input {
 
 .cardActionContainer {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+}
+
+.progressBar {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: white;
+  height: 8px;
+  width: 100%;
 }

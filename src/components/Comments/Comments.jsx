@@ -14,16 +14,13 @@ import './Comments.css';
 
 const Comments = () => {
     // declare state variable for comments
-    const [comments, setComments] = useState('');
+    const [comments, setComments] = useState(null);
 
     // declare variable for useDispatch
     const dispatch = useDispatch();
 
     // declare variable for useHistory
     const history = useHistory();
-
-    // useSelector to grab current value in feedback
-    const currentComments = useSelector((store) => (store.currentFeedback.comments));
 
     const handleInputChange = (event) => {
         setComments(event.target.value);
@@ -42,6 +39,8 @@ const Comments = () => {
 
     const handleBackButton = () => {
         console.log('in handleBackButton');
+
+        history.push('/support');
     }
 
     const FilledButton = styled(Button)(({ theme }) => ({
@@ -74,23 +73,11 @@ const Comments = () => {
 
     return (
         <>
-            {/* <div className="formContainer">
-                <h1>Comments</h1>
-                <p>Any comments you want to leave?</p>
-
-                <input
-                    type="text"
-                    onChange={handleInputChange}
-                    placeholder="enter comments here"
-                />
-
-                <button onClick={handleNextButton}>Next</button>
-            </div> */}
-
             <Container maxWidth="sm">
 
                 <div className="progressBar">
                     <div className="progressBarComments"></div>
+                    <div className="circle"></div>
                 </div>
 
                 <Card>
@@ -103,7 +90,7 @@ const Comments = () => {
                             label="Enter comments"
                             multiline
                             maxRows={6}
-                            defaultValue={currentComments}
+                            defaultValue={null}
                             onChange={handleInputChange}
                         />
 
@@ -116,19 +103,19 @@ const Comments = () => {
                     </CardContent>
 
                     <CardActions className="cardActionContainer">
-                        {/* <Button 
-                        size="small" 
-                        sx={{ color: 'teal' }} 
-                        onClick={handleBackButton}>
+                        <Button
+                            size="small"
+                            sx={{ color: 'teal' }}
+                            onClick={handleBackButton}>
                             <ArrowBackIcon fontSize="small" />Back
-                        </Button> */}
+                        </Button>
 
-                        <FilledButton 
-                        size="small" 
-                        onClick={handleNextButton}>
+                        <FilledButton
+                            size="small"
+                            onClick={handleNextButton}>
                             Review<ArrowForwardIcon fontSize="small" />
                         </FilledButton>
-                        
+
                     </CardActions>
                 </Card>
             </Container>

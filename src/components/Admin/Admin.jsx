@@ -6,11 +6,8 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 
 // import Material UI
-import { Container, styled, Card, CardContent} from '@mui/material';
+import { Container, Card, CardContent} from '@mui/material';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
-import { teal } from '@mui/material/colors';
-import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
-import BookmarkIcon from '@mui/icons-material/Bookmark';
 
 const Admin = ({updateFeedbackSubmission}) => {
 
@@ -21,8 +18,9 @@ const Admin = ({updateFeedbackSubmission}) => {
         <Container maxWidth="md">
             <Card>
                 <h1>Admin</h1>
+                <p>Please bookmark a submission that requires further attention.</p>
                 <CardContent>
-                    <TableContainer>
+                    <TableContainer component={Paper} sx={{backgroundColor: '#f4f8fa'}}>
                         <h3>Feedback History</h3>
                         <Table sx={{ minWidth: 200 }} size="small" aria-label="a dense table">
                             <TableHead>

@@ -43,15 +43,6 @@ const currentFeedback = (state=INITIAL_STATE, action) => {
     }
 }
 
-// this reducer is responsible for storing a change in value
-// for the flagged property of a form submission 
-const flaggedStatus = (state={}, action) => {
-    if (action.type === 'UPDATE_FLAGGED') {
-        return action.payload;
-    }
-    return state;
-}
-
-const rootReducer = combineReducers({feedbackHistory, currentFeedback, flaggedStatus});
+const rootReducer = combineReducers({feedbackHistory, currentFeedback});
 
 export default rootReducer;
