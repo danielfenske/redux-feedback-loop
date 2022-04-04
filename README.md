@@ -25,7 +25,7 @@ Below are a few steps I took to ensure project satisfaction:
 
 ## Wireframe
 
-![Wireframe](./wireframes/feedback-wireframe.png)
+![Wireframe](./wireframes/feedback-form.gif)
 
 ### Built with:
 - Redux
